@@ -1,0 +1,20 @@
+// base
+@import "./base/base";
+
+// mixins
+@import "./mixins/mixins";
+
+// // config
+@import "./config/colors";
+@import "./config/typography";
+@import "./config/helper-classes";
+
+// // components
+@import "./components/header.scss";
+@import "./components/hero";
+@import "./components/clients";
+@import "./components/guides";
+@import "./components/properties";
+@import "./components/features";
+@import "./components/newsletter";
+@import "./components/footer";

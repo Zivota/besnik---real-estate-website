@@ -1,0 +1,203 @@
+.properties {
+  padding: 60px 32px;
+  @include flexbox(column, center, center);
+  background-color: #f5fafe;
+
+  @include tablet {
+    padding: 80px 32px;
+  }
+
+  @include desktop {
+    padding: 110px 0;
+  }
+
+  &__container {
+    width: 100%;
+    @include flexbox(column, center, center);
+    text-align: center;
+
+    @include tablet {
+      align-items: flex-start;
+    }
+
+    @include desktop {
+      width: 1110px;
+    }
+  }
+
+  &__cta {
+    @include flexbox(column, center, center);
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 15px;
+    }
+
+    p {
+      padding: 15px 0;
+
+      @include tablet {
+        padding: 0;
+      }
+    }
+
+    button {
+      font-weight: 600;
+      line-height: 27px;
+      color: #0689ff;
+      border: none;
+      background-color: transparent;
+      font-size: 16px;
+      transition: 0.2s all ease-in-out;
+
+      img {
+        margin-left: 8px;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      @include laptop {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.properties {
+  &__highlighted {
+    width: 100%;
+    @include flexbox(column, center, center);
+    gap: 30px;
+    margin-top: 40px;
+
+    @include tablet {
+      margin-top: 70px;
+    }
+
+    @include laptop {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      width: 1110px;
+      justify-content: space-between;
+    }
+  }
+
+  &__property {
+    max-width: 270px;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    @include flexbox(column, center, center);
+    cursor: pointer;
+
+    @include tablet {
+      max-width: 350px;
+    }
+
+    @include laptop {
+      max-width: 320px;
+    }
+
+    @include desktop {
+      max-width: 350px;
+    }
+
+    img {
+      height: 180px;
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
+
+      &:hover {
+        scale: 1.1;
+        transition: 1s all ease;
+      }
+
+      @include tablet {
+        height: 227px;
+      }
+    }
+  }
+
+  &__propertyInfo {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background-color: $white;
+    z-index: 10;
+
+    @include tablet {
+      padding: 20px;
+    }
+
+    img {
+      height: auto;
+      width: auto;
+    }
+
+    h5 {
+      color: $subheadingBlue;
+      font-weight: $fwBold;
+      font-size: 16px;
+      line-height: 16px;
+
+      @include tablet {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: $lightGrey;
+      font-weight: $fwSemiBold;
+      line-height: 21px;
+      padding: 8px 0 16px 0;
+
+      @include tablet {
+        padding: 8px 0 22px 0;
+      }
+    }
+  }
+
+  &__propertyFlex {
+    width: 100%;
+    @include flexbox(row, center, space-between);
+
+    @include tablet {
+      justify-content: flex-start;
+      gap: 22px;
+    }
+
+    span {
+      @include flexbox(row, center, space-between);
+      font-weight: $fwSemiBold;
+      color: #4d4d52;
+      letter-spacing: 0.05px;
+      font-size: 12px;
+      line-height: 14px;
+
+      @include tablet {
+        font-size: 14px;
+      }
+
+      @include laptop {
+        font-size: 13px;
+      }
+
+      @include desktop {
+        font-size: 14px;
+      }
+
+      img {
+        margin-right: 4px;
+      }
+    }
+  }
+}

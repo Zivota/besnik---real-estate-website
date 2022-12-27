@@ -1,0 +1,171 @@
+.features {
+  width: 100%;
+  height: auto;
+  display: grid;
+  place-items: center;
+  background-color: $white;
+
+  &__container {
+    width: 100%;
+    padding: 60px 32px 45px 32px;
+    @include flexbox(column, center, center);
+    gap: 45px;
+
+    @include tablet {
+      padding: 80px 32px 60px 32px;
+      gap: 65px;
+    }
+
+    @include laptop {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      width: 1110px;
+      padding: 125px 0 110px 0;
+      gap: 165px;
+    }
+  }
+
+  &__imageHolder {
+    position: relative;
+    @include flexbox(row, flex-start, flex-end);
+    width: 100%;
+    height: 400px;
+    max-width: 520px;
+
+    @include tablet {
+      height: 460px;
+      width: 520px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      max-width: 400px;
+
+      @include tablet {
+        height: 460px;
+        width: 400px;
+      }
+    }
+  }
+
+  &__stats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 239px;
+    height: 252px;
+    @include flexbox(column, center, center);
+    padding: 45px 22px;
+    box-shadow: 90px 85px 100px rgba(0, 0, 0, 0.06);
+    background-color: $white;
+    border-radius: 0px 0px 12px 0;
+
+    h4 {
+      font-weight: $fwExtraBold;
+      font-size: 26px;
+      line-height: 26px;
+      letter-spacing: 0.05px;
+      color: $subheadingBlue;
+    }
+
+    p {
+      font-weight: $fwRegular;
+      font-size: 12px;
+      line-height: 18px;
+      color: #a7a7a7;
+      padding: 8px 0 25px 0;
+      border-bottom: 1px solid #e9e9e9;
+    }
+
+    img {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    @include flexbox(row, center, space-between);
+  }
+
+  &__textHolder {
+    width: 100%;
+    text-align: center;
+    max-width: 450px;
+    display: grid;
+    place-items: center;
+
+    @include desktop {
+      max-width: 310px;
+      text-align: left;
+      place-items: flex-start;
+    }
+
+    h2 {
+      padding: 10px 0 20px 0;
+    }
+  }
+}
+
+#usersImg {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.features {
+  &__numbers {
+    width: 100%;
+    @include flexbox(column, center, center);
+    text-align: center;
+    gap: 40px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 70px;
+    }
+
+    @include laptop {
+      gap: 120px;
+      margin-top: 30px;
+    }
+
+    @include desktop {
+      margin-top: 0;
+      gap: 220px;
+    }
+  }
+
+  &__cell {
+    h3 {
+      font-weight: $fwBold;
+      font-size: 48px;
+      line-height: 48px;
+      color: $black;
+      margin-bottom: 8px;
+
+      @include tablet {
+        margin-bottom: 12px;
+      }
+
+      @include laptop {
+        font-size: 64px;
+        line-height: 64px;
+        margin-bottom: 24px;
+      }
+    }
+
+    span {
+      font-weight: $fwSemiBold;
+      font-size: 16px;
+      line-height: 27px;
+      color: #7b8087;
+
+      @include laptop {
+        font-size: 18px;
+      }
+    }
+  }
+}

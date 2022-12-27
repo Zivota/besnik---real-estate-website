@@ -1,0 +1,87 @@
+.clients {
+  width: 100%;
+  background-color: $white;
+  display: flex;
+
+  &__container {
+    padding: 60px 32px 0 32px;
+    width: 100%;
+    margin: auto;
+
+    @include tablet {
+      padding-top: 90px;
+    }
+
+    @include desktop {
+      width: 1110px;
+      padding: 122px 0 0 0;
+    }
+  }
+
+  &__topbar {
+    width: inherit;
+    @include flexbox(column, center, center);
+
+    @include laptop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__column {
+    @include flexbox(column, center, center);
+
+    @include laptop {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    p {
+      color: $pGrey;
+      margin-top: 12px;
+
+      @include desktop {
+        margin-top: 23px;
+      }
+    }
+  }
+
+  &__stars {
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: 24px;
+
+    @include laptop {
+      margin-top: 0;
+      place-items: flex-end;
+    }
+
+    img {
+      @include laptop {
+        position: absolute;
+        bottom: -5px;
+      }
+    }
+  }
+}
+
+.clients__logos {
+  width: 100%;
+  @include flexbox(column, center, center);
+  padding-top: 60px;
+  gap: 30px;
+
+  @include tablet {
+    padding-top: 75px;
+  }
+
+  @include laptop {
+    @include flexbox(row, center, space-between);
+  }
+
+  @include desktop {
+    padding-top: 100px;
+  }
+}

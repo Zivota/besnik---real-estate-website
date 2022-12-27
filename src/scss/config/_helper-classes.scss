@@ -1,0 +1,36 @@
+.primaryButton {
+  height: 50px;
+  width: 170px;
+  background-color: $buttonBlue;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: $white;
+  font-size: 13px;
+  border: none;
+  font-weight: $fwSemiBold;
+
+  &:hover {
+    opacity: 0.95;
+    scale: 0.98;
+    transition: 0.1s all ease;
+  }
+}
+
+.logo {
+  height: 24px;
+  width: 107px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.topline {
+  display: block;
+  width: 41px;
+  height: 4px;
+  border-radius: 12px;
+  background-color: $subheadingBlue;
+}

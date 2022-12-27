@@ -1,0 +1,32 @@
+// flex property
+@mixin flexbox($flex-direction, $align-items, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+// media queries
+@mixin phone {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}

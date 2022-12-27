@@ -1,0 +1,119 @@
+.hero {
+  height: auto;
+  width: 100%;
+  background-color: $backgroundLightBlue;
+  margin-top: 70px;
+  @include flexbox(column, center, center);
+
+  @include laptop {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    margin-top: 117px;
+  }
+
+  &__container {
+    width: 100%;
+    padding: 0 32px;
+    @include flexbox(column, center, center);
+
+    @include laptop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      width: 1110px;
+      padding: 0;
+    }
+  }
+}
+
+.hero__content {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding: 32px 0;
+
+  @include laptop {
+    width: 50%;
+    text-align: left;
+    place-items: flex-start;
+    padding: 0;
+  }
+
+  @include desktop {
+    width: calc(50% + 80px);
+  }
+
+  h5 {
+    color: $subheadingGrey;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+
+    @include desktop {
+      margin-bottom: 8px;
+    }
+  }
+
+  h1 {
+    color: $headingBlue;
+  }
+
+  p {
+    margin-top: 16px;
+    margin-bottom: 26px;
+    line-height: 26px;
+    font-size: 18px;
+    color: $textGrey;
+
+    @include desktop {
+      line-height: 32px;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.hero__img {
+  position: relative;
+  width: 100%;
+  height: 350px;
+
+  @include tablet {
+    height: 400px;
+  }
+
+  @include laptop {
+    width: 50%;
+    height: 550px;
+  }
+
+  @include desktop {
+    width: 50%;
+    height: 619px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: inherit;
+    width: 100%;
+    background-image: url("../images/house-illustration.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include laptop {
+      background-position: right;
+    }
+
+    @include desktop {
+      width: 584px;
+      left: 80px;
+    }
+  }
+}

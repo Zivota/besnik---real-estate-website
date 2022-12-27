@@ -1,0 +1,205 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $backgroundLightBlue;
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  height: 70px;
+
+  @include desktop {
+    height: 117px;
+  }
+}
+
+.nav-bar {
+  @include flexbox(row, center, space-between);
+  margin: auto;
+  padding: 0 32px;
+  z-index: 999;
+  width: 100%;
+
+  // hiding scrollbar but keeping functionality in our navigation
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include desktop {
+    max-width: 1110px;
+    padding: 0;
+  }
+
+  &__burgerBtn {
+    display: relative;
+    width: 28px;
+    height: 18px;
+    @include flexbox(column, center, space-between);
+    cursor: pointer;
+
+    @include laptop {
+      display: none;
+    }
+
+    span {
+      height: 2px;
+      width: 100%;
+      background-color: $buttonBlue;
+      transition: 0.3s all ease;
+    }
+  }
+}
+
+.nav-bar__links {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  display: none;
+  background-color: $backgroundLightBlue;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 12px 32px 32px 32px;
+  z-index: 999;
+
+  @include laptop {
+    position: relative;
+    @include flexbox(row, center, space-between);
+    top: 0;
+    padding: 0;
+    height: auto;
+    overflow-y: hidden;
+  }
+}
+
+.nav-bar__links-active {
+  @include flexbox(column, center, flex-start);
+  animation: fade-from-top 0.5s ease;
+
+  @include laptop {
+    @include flexbox(row, center, space-between);
+  }
+}
+
+.nav-bar__ul {
+  @include flexbox(column, center, center);
+  width: 100%;
+  max-width: 30rem;
+  margin-top: 2rem;
+
+  @include laptop {
+    margin-top: 0;
+    width: auto;
+    max-width: auto;
+  }
+
+  li {
+    padding: 12px 0;
+    width: 100%;
+    border-top: 1px solid $lightGrey;
+    text-align: center;
+
+    @include laptop {
+      padding: 8px 0;
+      border: none;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $lightGrey;
+
+      @include laptop {
+        border: none;
+      }
+    }
+
+    a {
+      color: $navGrey;
+      font-size: 14px;
+      line-height: 16px;
+
+      &:hover {
+        color: $headingBlue;
+        transition: 0.2s all ease;
+      }
+
+      @include laptop {
+        line-height: 21px;
+      }
+    }
+  }
+
+  @include laptop {
+    flex-direction: row;
+    margin-left: 64px;
+    gap: 30px;
+  }
+}
+
+.nav-bar__buttons {
+  margin: 32px;
+
+  a {
+    display: grid;
+    place-items: center;
+    color: $buttonBlue;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:hover {
+      opacity: 0.8;
+      transition: 0.2s all ease;
+    }
+
+    &:last-child {
+      width: 98px;
+      height: 40px;
+      color: white;
+      background-color: $buttonBlue;
+      border-radius: 8px;
+      margin-top: 16px;
+
+      @include laptop {
+        margin-top: 0;
+        margin-left: 18px;
+        line-height: 21px;
+      }
+    }
+  }
+
+  @include laptop {
+    margin: 0;
+    display: flex;
+  }
+}
+
+.burger-active {
+  span {
+    &:nth-child(1) {
+      rotate: -44deg;
+      transform: translate(-5px, 5px);
+    }
+
+    &:nth-child(3) {
+      rotate: 44deg;
+      transform: translate(-6px, -6px);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes fade-from-top {
+  from {
+    top: 35px;
+    opacity: 0;
+  }
+
+  to {
+    top: 70px;
+    opacity: 1;
+  }
+}
